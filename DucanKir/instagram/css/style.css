@@ -26,7 +26,8 @@ body {
 }
 .signup, .login {
   background-color: white;
-
+  border: solid 2px #e6e6e6 ;
+  width: 355px;
 }
 .info {
   width: 35%;
@@ -53,4 +54,30 @@ input {
 button {
   background-color: #3897f0;
   color: white;
+  height: 35px;
+  border-radius: 5px;
+
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.appslogos {
+  display: flex;
+  justify-content: center;
+}
+.apps {
+  width: 355px;
+}
+.apps img{
+  margin: 5px;
+}
+footer {
+  display: flex;
+}
+#copyright {
+  display: flex;
+  justify-content: flex-end;
 }
