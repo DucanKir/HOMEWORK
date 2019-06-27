@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  background-color: hsl(204, 43%, 93%);
+  font-family: Karla;
+  font-size: 16px;
+
+}
+
+main {
+  display: flex;
+  justify-content: center;
+
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 40px;
+  max-width: 680px;
+}
+
+.large {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+
+}
+
+.small {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.community {
+  background-color: white;
+  padding: 30px 45px;
+  margin: 0;
+}
+.community h3 {
+  color: hsl(71, 73%, 54%);
+}
+.community p {
+  color: hsl(218, 22%, 67%);
+  font-weight: 100;
+}
+.subscription {
+
+  padding: 30px 45px;
+  margin: 0;
+  color: white;
+}
+#dark {
+  background-color: hsl(179, 62%, 43%);
+}
+#light {
+  background-color: #30ccc9;
+}
+
+
+.about {
+  padding: 30px 45px;
+  margin: 0;
+  color: white;
+}
+button {
+  background-color: hsl(71, 73%, 54%);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 16px;
+  width: 98%;
+  font-weight: 100;
+  font-size: 16px;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
+}
+h1 {
+  margin: 0;
+  color: hsl(179, 62%, 43%);
+  padding: 0 0 20px 0;
+  font-weight: 700;
+}
+
+h3 {
+  margin: 0;
+  font-weight: 700;
+}
+#price-part-one {
+font-weight: 400;
+font-size: 30px;
+vertical-align: middle;
+}
+#price-part-two {
+  vertical-align: middle;
+  color: #30ccc9;
+  margin: 0 0 0 10px;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+@media screen and (min-width: 600px) {
+    .small {
+      width: 50%;
+    }
+}
