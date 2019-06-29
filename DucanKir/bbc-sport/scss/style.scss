@@ -80,11 +80,18 @@ main {
       margin: 0;
     }
   }
+  .small article:nth-child(3n+1){
+    margin-left: 10px;
+  }
+  .small article:nth-child(3n+3){
+    margin-right: 10px;
+  }
   .small {
     display: flex;
     flex-wrap: wrap;
     article {
-      width: 33%;
+      width: 32%;
+      padding: 10px;
       h2 {
         font-size: 18px;
       }
