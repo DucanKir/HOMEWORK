@@ -23,11 +23,31 @@ header {
     margin: 0;
     font-size: 50px;
   }
-  nav {
+  .desktopNav {
     display: none;
     height: 40px;
   }
+
 }
+.navContainer {
+//   display: none;
+  background-color: black;
+
+  a{
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #fbd13375;
+  }
+  a:last-child{
+    border: none;
+  }
+}
+
 
 button.btn {
   display: flex;
@@ -48,12 +68,19 @@ button.btn {
 }
 
 main {
-
+  h3 {
+    margin: 0;
+    padding: 10px 0;
+  }
+  h2 {
+  margin: 20px 0 5px 0;
+  }
   article {
     display: flex;
     flex-direction: column;
+    align-content: flex-start;
     margin: 0;
-    padding: 20px;
+    padding:20px 20px 0 20px;
     p {
       margin: 0;
     }
@@ -79,10 +106,7 @@ main {
     flex-wrap: wrap;
     article {
       width: 49%;
-      padding: 10px;
-      h2 {
-        font-size: 18px;
-      }
+      padding: 20px;
     }
   }
 }
@@ -92,6 +116,9 @@ main {
     display: flex;
     flex-wrap: wrap;
   }
+  .text h2 {
+    margin: 0;
+  }
   article.large {
     display: flex;
     flex-direction: row;
@@ -99,9 +126,6 @@ main {
     padding: 20px 20px 10px 20px;
     .text {
       padding: 0 20px 0 20px;
-    h2 {
-      margin-top: 0;
-    }
     }
     img{
       width: 50%;
@@ -117,12 +141,7 @@ main {
   .small {
       width: 32%;
       padding: 10px;
-      h2 {
-        font-size: 18px;
-      }
-
-
-  }
+    }
 
 }
 @media screen and (min-width: 1024px) {
@@ -136,7 +155,7 @@ main {
     padding-bottom: 0;
 
   }
-  header nav {
+  header .desktopNav {
     display: flex;
     align-items: center;
 
@@ -154,6 +173,9 @@ main {
       border-bottom: 4px solid #121212;
       padding-bottom: 6px;
     }
+  }
+  .text h2 {
+    margin: 0;
   }
   #tennis {
     display:block;
@@ -176,13 +198,11 @@ main {
   .large {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     margin: 0;
     padding: 20px 20px 10px 20px;
     .text {
       padding: 0 20px 0 20px;
-    h2 {
-      margin-top: 0;
-    }
     }
     img{
       width: 75%;
@@ -195,26 +215,21 @@ main {
     flex-direction: row;
   }
   .large {
-    width: 73%
+    width: 73%;
+    padding: 20px 0 10px 20px;
   }
   article:nth-child(2){
-    margin: 10px 0 0 20px;
+    margin: 10px 0 0 15px;
    }
   article:nth-child(3){
      margin: 0 0 0 10px;
     }
-//   .small article:nth-child(3n+3){
-//     margin-right: 10px;
-//   }
   main {
     display: flex;
     flex-wrap: wrap;
     article {
       width: 24.5%;
       padding: 10px;
-      h2 {
-        font-size: 18px;
-      }
     }
 
   }

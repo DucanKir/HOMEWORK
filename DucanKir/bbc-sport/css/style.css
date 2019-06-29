@@ -15,9 +15,23 @@ header {
   header h1 {
     margin: 0;
     font-size: 50px; }
-  header nav {
+  header .desktopNav {
     display: none;
     height: 40px; }
+
+.navContainer {
+  background-color: black; }
+  .navContainer a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #fbd13375; }
+  .navContainer a:last-child {
+    border: none; }
 
 button.btn {
   display: flex;
@@ -35,11 +49,17 @@ button.btn {
 #tennis {
   display: none; }
 
+main h3 {
+  margin: 0;
+  padding: 10px 0; }
+main h2 {
+  margin: 20px 0 5px 0; }
 main article {
   display: flex;
   flex-direction: column;
+  align-content: flex-start;
   margin: 0;
-  padding: 20px; }
+  padding: 20px 20px 0 20px; }
   main article p {
     margin: 0; }
   main article img {
@@ -61,13 +81,14 @@ main article {
     flex-wrap: wrap; }
     main article {
       width: 49%;
-      padding: 10px; }
-      main article h2 {
-        font-size: 18px; } }
+      padding: 20px; } }
 @media screen and (min-width: 800px) and (max-width: 1023px) {
   main {
     display: flex;
     flex-wrap: wrap; }
+
+  .text h2 {
+    margin: 0; }
 
   article.large {
     display: flex;
@@ -76,8 +97,6 @@ main article {
     padding: 20px 20px 10px 20px; }
     article.large .text {
       padding: 0 20px 0 20px; }
-      article.large .text h2 {
-        margin-top: 0; }
     article.large img {
       width: 50%;
       margin: 0; }
@@ -90,9 +109,7 @@ main article {
 
   .small {
     width: 32%;
-    padding: 10px; }
-    .small h2 {
-      font-size: 18px; } }
+    padding: 10px; } }
 @media screen and (min-width: 1024px) {
   button.btn {
     display: none; }
@@ -103,20 +120,23 @@ main article {
     align-items: flex-start;
     padding-bottom: 0; }
 
-  header nav {
+  header .desktopNav {
     display: flex;
     align-items: center; }
-    header nav a {
+    header .desktopNav a {
       text-decoration: none;
       padding: 10px;
       border-right: 1px solid rgba(18, 18, 18, 0.2);
       color: #121212;
       line-height: 6px; }
-    header nav a:last-child {
+    header .desktopNav a:last-child {
       border-right: 0; }
-    header nav a:hover {
+    header .desktopNav a:hover {
       border-bottom: 4px solid #121212;
       padding-bottom: 6px; }
+
+  .text h2 {
+    margin: 0; }
 
   #tennis {
     display: block; }
@@ -138,12 +158,11 @@ main article {
   .large {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     margin: 0;
     padding: 20px 20px 10px 20px; }
     .large .text {
       padding: 0 20px 0 20px; }
-      .large .text h2 {
-        margin-top: 0; }
     .large img {
       width: 75%;
       margin: 0; }
@@ -154,10 +173,11 @@ main article {
     flex-direction: row; }
 
   .large {
-    width: 73%; }
+    width: 73%;
+    padding: 20px 0 10px 20px; }
 
   article:nth-child(2) {
-    margin: 10px 0 0 20px; }
+    margin: 10px 0 0 15px; }
 
   article:nth-child(3) {
     margin: 0 0 0 10px; }
@@ -167,8 +187,6 @@ main article {
     flex-wrap: wrap; }
     main article {
       width: 24.5%;
-      padding: 10px; }
-      main article h2 {
-        font-size: 18px; } }
+      padding: 10px; } }
 
 /*# sourceMappingURL=style.css.map */
