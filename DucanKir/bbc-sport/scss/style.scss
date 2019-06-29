@@ -45,12 +45,11 @@ button.btn {
 }
 
 main {
-  display: flex;
-  flex-wrap: wrap;
+
   article {
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin: 0;
     padding: 20px;
     p {
       margin: 0;
@@ -60,4 +59,43 @@ main {
       width: 100%;
     }
   }
+}
+@media screen and (min-width: 400px){
+
+}
+
+@media screen and (min-width: 481px){
+  .large {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    .text {
+      padding: 0 20px 0 20px;
+    h2 {
+      margin-top: 0;
+    }
+    }
+    img{
+      width: 50%;
+      margin: 0;
+    }
+  }
+  .small {
+    display: flex;
+    flex-wrap: wrap;
+    article {
+      width: 33%;
+      h2 {
+        font-size: 18px;
+      }
+    }
+
+  }
+  .smallart {
+
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+}
 }

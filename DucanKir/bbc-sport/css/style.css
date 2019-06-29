@@ -32,18 +32,41 @@ button.btn {
     width: 40px;
     margin: 0 5px 0 0; }
 
-main {
+main article {
   display: flex;
-  flex-wrap: wrap; }
-  main article {
+  flex-direction: column;
+  margin: 0;
+  padding: 20px; }
+  main article p {
+    margin: 0; }
+  main article img {
+    align-self: center;
+    width: 100%; }
+
+@media screen and (min-width: 481px) {
+  .large {
+    display: flex;
+    flex-direction: row;
+    margin: 0; }
+    .large .text {
+      padding: 0 20px 0 20px; }
+      .large .text h2 {
+        margin-top: 0; }
+    .large img {
+      width: 50%;
+      margin: 0; }
+
+  .small {
+    display: flex;
+    flex-wrap: wrap; }
+    .small article {
+      width: 33%; }
+      .small article h2 {
+        font-size: 18px; }
+
+  .smallart {
     display: flex;
     flex-direction: column;
-    margin: auto;
-    padding: 20px; }
-    main article p {
-      margin: 0; }
-    main article img {
-      align-self: center;
-      width: 100%; }
+    margin: 0; } }
 
 /*# sourceMappingURL=style.css.map */
