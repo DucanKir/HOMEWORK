@@ -53,42 +53,46 @@ main article {
   .small article:nth-child(2n+2) {
     margin-right: 10px; }
 
-  .small {
+  .large {
+    width: 100%; }
+
+  main {
     display: flex;
     flex-wrap: wrap; }
-    .small article {
-      width: 46%;
+    main article {
+      width: 49%;
       padding: 10px; }
-      .small article h2 {
+      main article h2 {
         font-size: 18px; } }
 @media screen and (min-width: 800px) and (max-width: 1023px) {
-  .large {
+  main {
+    display: flex;
+    flex-wrap: wrap; }
+
+  article.large {
     display: flex;
     flex-direction: row;
     margin: 0;
     padding: 20px 20px 10px 20px; }
-    .large .text {
+    article.large .text {
       padding: 0 20px 0 20px; }
-      .large .text h2 {
+      article.large .text h2 {
         margin-top: 0; }
-    .large img {
+    article.large img {
       width: 50%;
       margin: 0; }
 
-  .small article:nth-child(3n+1) {
+  article:nth-child(3n+2) {
     margin-left: 10px; }
 
-  .small article:nth-child(3n+3) {
+  .small article:nth-child(4n+3) {
     margin: 0 10px 0 0; }
 
   .small {
-    display: flex;
-    flex-wrap: wrap; }
-    .small article {
-      width: 31%;
-      padding: 10px; }
-      .small article h2 {
-        font-size: 18px; } }
+    width: 32%;
+    padding: 10px; }
+    .small h2 {
+      font-size: 18px; } }
 @media screen and (min-width: 1024px) {
   button.btn {
     display: none; }
@@ -107,9 +111,12 @@ main article {
       padding: 10px;
       border-right: 1px solid rgba(18, 18, 18, 0.2);
       color: #121212;
-      line-height: 8px; }
+      line-height: 6px; }
     header nav a:last-child {
       border-right: 0; }
+    header nav a:hover {
+      border-bottom: 4px solid #121212;
+      padding-bottom: 6px; }
 
   #tennis {
     display: block; }
@@ -126,6 +133,42 @@ main article {
     margin: 0 0 20px 20px; }
 
   nav {
-    margin-left: 10px; } }
+    margin-left: 10px; }
+
+  .large {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 20px 20px 10px 20px; }
+    .large .text {
+      padding: 0 20px 0 20px; }
+      .large .text h2 {
+        margin-top: 0; }
+    .large img {
+      width: 75%;
+      margin: 0; }
+
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; }
+
+  .large {
+    width: 73%; }
+
+  article:nth-child(2) {
+    margin: 10px 0 0 20px; }
+
+  article:nth-child(3) {
+    margin: 0 0 0 10px; }
+
+  main {
+    display: flex;
+    flex-wrap: wrap; }
+    main article {
+      width: 24.5%;
+      padding: 10px; }
+      main article h2 {
+        font-size: 18px; } }
 
 /*# sourceMappingURL=style.css.map */
