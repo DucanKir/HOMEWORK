@@ -1,5 +1,5 @@
 $header-color: #fbd133;
-$font-color: #4b4b4b;
+$font-color: #121212;
 $font: Roboto;
 
 * {
@@ -25,14 +25,14 @@ header {
   }
   nav {
     display: none;
-    height: 50px;
+    height: 40px;
   }
 }
 
 button.btn {
   display: flex;
   align-items: center;
-  border: 1px solid #caac2e;
+  border: 1px solid rgba(18,18,18,0.2);
   color: $font-color;
   font-size: 25px;
   padding: 0px 10px 0 0;
@@ -42,6 +42,9 @@ button.btn {
     width: 40px;
     margin: 0 5px 0 0;
   }
+}
+#tennis {
+  display: none;
 }
 
 main {
@@ -125,10 +128,41 @@ main {
   header{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: 0;
+
   }
   header nav {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      padding: 10px;
+      border-right: 1px solid rgba(18,18,18,0.2);
+      color: #121212;
+      line-height: 8px;
+    }
+    a:last-child {
+      border-right: 0;
+    }
+  }
+  #tennis {
+    display:block;
+  }
+  .logo {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid rgba(18,18,18,0.2);
+  }
+  header {
+    padding: 20px 0 0 0;
+  }
+  .logo h1{
+    margin: 0 0 20px 20px;
+  }
+  nav {
+    margin-left: 10px;
   }
 
 //   .large {

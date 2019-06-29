@@ -4,7 +4,7 @@
 body {
   margin: 0;
   font-family: Roboto;
-  color: #4b4b4b; }
+  color: #121212; }
 
 header {
   display: flex;
@@ -17,13 +17,13 @@ header {
     font-size: 50px; }
   header nav {
     display: none;
-    height: 50px; }
+    height: 40px; }
 
 button.btn {
   display: flex;
   align-items: center;
-  border: 1px solid #caac2e;
-  color: #4b4b4b;
+  border: 1px solid rgba(18, 18, 18, 0.2);
+  color: #121212;
   font-size: 25px;
   padding: 0px 10px 0 0;
   font-family: Roboto;
@@ -31,6 +31,9 @@ button.btn {
   button.btn img {
     width: 40px;
     margin: 0 5px 0 0; }
+
+#tennis {
+  display: none; }
 
 main article {
   display: flex;
@@ -93,9 +96,36 @@ main article {
   header {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; }
+    align-items: flex-start;
+    padding-bottom: 0; }
 
   header nav {
-    display: inline-block; } }
+    display: flex;
+    align-items: center; }
+    header nav a {
+      text-decoration: none;
+      padding: 10px;
+      border-right: 1px solid rgba(18, 18, 18, 0.2);
+      color: #121212;
+      line-height: 8px; }
+    header nav a:last-child {
+      border-right: 0; }
+
+  #tennis {
+    display: block; }
+
+  .logo {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid rgba(18, 18, 18, 0.2); }
+
+  header {
+    padding: 20px 0 0 0; }
+
+  .logo h1 {
+    margin: 0 0 20px 20px; }
+
+  nav {
+    margin-left: 10px; } }
 
 /*# sourceMappingURL=style.css.map */
