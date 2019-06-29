@@ -62,13 +62,41 @@ main {
 }
 @media screen and (min-width: 400px){
 
+  .small article:nth-child(2n+1){
+    margin-left: 10px;
+  }
+  .small article:nth-child(2n+2){
+    margin-right: 10px;
+  }
+  .small {
+    display: flex;
+    flex-wrap: wrap;
+    article {
+      width: 46%;
+      padding: 10px;
+      h2 {
+        font-size: 18px;
+      }
+    }
+
+  }
+  .smallart {
+
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
 }
 
-@media screen and (min-width: 481px){
+
+}
+
+@media screen and (min-width: 800px){
   .large {
     display: flex;
     flex-direction: row;
     margin: 0;
+    padding: 20px 20px 10px 20px;
     .text {
       padding: 0 20px 0 20px;
     h2 {
@@ -90,7 +118,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     article {
-      width: 32%;
+      width: 31%;
       padding: 10px;
       h2 {
         font-size: 18px;
