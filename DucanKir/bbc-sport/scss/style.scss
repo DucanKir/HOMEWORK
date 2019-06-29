@@ -1,12 +1,15 @@
 $header-color: #fbd133;
+$font-color: #4b4b4b;
+$font: Roboto;
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Roboto;
-  color: #4b4b4b;
+  font-family: $font;
+  color: $font-color;
 }
 
 header {
@@ -15,38 +18,46 @@ header {
   background-color: $header-color;
   padding: 20px;
   align-items: center;
+
   h1 {
     margin: 0;
     font-size: 50px;
   }
-  .menuicon div {
-    width: 22px;
-    height: 2px;
-    background-color: #4b4b4b;
-    margin: 6px 0;
+  nav {
+    display: none;
+    height: 50px;
+  }
 }
 
+button.btn {
+  display: flex;
+  align-items: center;
+  border: 1px solid #caac2e;
+  color: $font-color;
+  font-size: 25px;
+  padding: 0px 10px 0 0;
+  font-family: $font;
+  background-color: $header-color;
+  img {
+    width: 40px;
+    margin: 0 5px 0 0;
+  }
 }
+
 main {
   display: flex;
   flex-wrap: wrap;
-}
-
-nav {
-  display: none;
-  height: 50px;
-}
-
-article {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  padding: 20px;
-  p {
-    margin: 0;
-  }
-  img {
-    align-self: center;
-    width: 100%;
+  article {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 20px;
+    p {
+      margin: 0;
+    }
+    img {
+      align-self: center;
+      width: 100%;
+    }
   }
 }

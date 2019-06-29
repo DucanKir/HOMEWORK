@@ -15,29 +15,35 @@ header {
   header h1 {
     margin: 0;
     font-size: 50px; }
-  header .menuicon div {
-    width: 22px;
-    height: 2px;
-    background-color: #4b4b4b;
-    margin: 6px 0; }
+  header nav {
+    display: none;
+    height: 50px; }
+
+button.btn {
+  display: flex;
+  align-items: center;
+  border: 1px solid #caac2e;
+  color: #4b4b4b;
+  font-size: 25px;
+  padding: 0px 10px 0 0;
+  font-family: Roboto;
+  background-color: #fbd133; }
+  button.btn img {
+    width: 40px;
+    margin: 0 5px 0 0; }
 
 main {
   display: flex;
   flex-wrap: wrap; }
-
-nav {
-  display: none;
-  height: 50px; }
-
-article {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  padding: 20px; }
-  article p {
-    margin: 0; }
-  article img {
-    align-self: center;
-    width: 100%; }
+  main article {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 20px; }
+    main article p {
+      margin: 0; }
+    main article img {
+      align-self: center;
+      width: 100%; }
 
 /*# sourceMappingURL=style.css.map */
