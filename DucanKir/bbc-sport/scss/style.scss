@@ -60,7 +60,7 @@ main {
     }
   }
 }
-@media screen and (min-width: 400px){
+@media screen and (min-width: 400px) and (max-width: 799px){
 
   .small article:nth-child(2n+1){
     margin-left: 10px;
@@ -78,20 +78,10 @@ main {
         font-size: 18px;
       }
     }
-
   }
-  .smallart {
-
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-
 }
 
-
-}
-
-@media screen and (min-width: 800px){
+@media screen and (min-width: 800px)and(max-width: 1023px){
   .large {
     display: flex;
     flex-direction: row;
@@ -112,7 +102,7 @@ main {
     margin-left: 10px;
   }
   .small article:nth-child(3n+3){
-    margin-right: 10px;
+    margin: 0 10px 0 0;
   }
   .small {
     display: flex;
@@ -126,11 +116,54 @@ main {
     }
 
   }
-  .smallart {
-
-    display: flex;
-    flex-direction: column;
-    margin: 0;
 
 }
+@media screen and (min-width: 1024px) {
+  button.btn {
+    display: none;
+  }
+  header{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  header nav {
+    display: inline-block;
+  }
+
+//   .large {
+//     display: flex;
+//     flex-direction: row;
+//     margin: 0;
+//     padding: 20px 20px 10px 20px;
+//     .text {
+//       padding: 0 20px 0 20px;
+//     h2 {
+//       margin-top: 0;
+//     }
+//     }
+//     img{
+//       width: 50%;
+//       margin: 0;
+//     }
+//   }
+//   .small article:nth-child(3n+1){
+//     margin-left: 10px;
+//   }
+//   .small article:nth-child(3n+3){
+//     margin-right: 10px;
+//   }
+//   .small {
+//     display: flex;
+//     flex-wrap: wrap;
+//     article {
+//       width: 31%;
+//       padding: 10px;
+//       h2 {
+//         font-size: 18px;
+//       }
+//     }
+//
+//   }
+//
 }
