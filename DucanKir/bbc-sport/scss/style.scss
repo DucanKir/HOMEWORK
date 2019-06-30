@@ -30,8 +30,8 @@ header {
 
 }
 .navContainer {
-//   display: none;
   background-color: black;
+  width: 100%;
 
   a{
     display: inline-block;
@@ -46,9 +46,21 @@ header {
   a:last-child{
     border: none;
   }
+  a:hover{
+    background-color:rgba(18,18,18,1);
+  }
+  display: none;
+  -webkit-animation: slide-down .3s ease-out;
+    -moz-animation: slide-down .3s ease-out;
 }
-
-
+@-webkit-keyframes slide-down {
+      0% { opacity: 0; -webkit-transform: translateY(-100%); }
+    100% { opacity: 1; -webkit-transform: translateY(0); }
+}
+@-moz-keyframes slide-down {
+      0% { opacity: 0; -moz-transform: translateY(-100%); }
+    100% { opacity: 1; -moz-transform: translateY(0); }
+}
 button.btn {
   display: flex;
   align-items: center;
@@ -132,10 +144,10 @@ main {
       margin: 0;
     }
   }
-  article:nth-child(3n+2){
+  article:nth-child(3n+3){
     margin-left: 10px;
   }
-  .small article:nth-child(4n+3){
+  .small article:nth-child(4n+4){
     margin: 0 10px 0 0;
   }
   .small {
@@ -218,10 +230,10 @@ main {
     width: 73%;
     padding: 20px 0 10px 20px;
   }
-  article:nth-child(2){
+  article:nth-child(3){
     margin: 10px 0 0 15px;
    }
-  article:nth-child(3){
+  article:nth-child(4){
      margin: 0 0 0 10px;
     }
   main {
@@ -234,4 +246,7 @@ main {
 
   }
 //
+}
+.show {
+  display:inline-block;
 }

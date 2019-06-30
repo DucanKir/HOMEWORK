@@ -14,7 +14,7 @@
         <div class="logo">
           <h1>SPORT</h1>
         </div>
-        <button class="btn"><img src="images/menu-icon.png">All Sport</button>
+        <button class="btn" onclick="openMenu()"><img src="images/menu-icon.png">All Sport</button>
         <nav class="desktopNav">
           <a href="#">Home</a>
           <a href="#">Football</a>
@@ -28,7 +28,7 @@
         </nav>
       </header>
       <main>
-        <div class="navContainer">
+        <div class="navContainer" id="dropdown">
           <nav class="mobileNav">
             <a href="#">Home</a>
             <a href="#">Football</a>
@@ -71,6 +71,10 @@
         </article>
       </main>
     </div>
-
+  <script>
+    function openMenu() {
+      document.getElementById("dropdown").classList.toggle("show");
+    }
+  </script>
   </body>
 </html>
