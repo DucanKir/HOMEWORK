@@ -62,7 +62,7 @@ function measurementToNumber(array) {
 
 function numberOfVowels(string) {
 
-  return string.split(' ').filter((letter) => 'aeiouAEIOU'.includes(letter)).length
+  return string.split('').filter((letter) => 'aeiouAEIOU'.includes(letter)).length
 
 
 
@@ -72,5 +72,5 @@ function numberOfVowels(string) {
 // eg: titleCase('The lord of the rings') => 'The Lord Of The Rings'
 
 function titleCase(string) {
-
+  return string.split(' ').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
 }
