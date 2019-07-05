@@ -68,7 +68,7 @@ describe('titleCase', () => {
   })
 })
 
-xdescribe('numOfVowels', () => {
+describe('numOfVowels', () => {
   it('should count the number of vowels in a string', () => {
     expect(numOfVowels('yellow submarine')).to.equal(6)
   })
@@ -77,7 +77,7 @@ xdescribe('numOfVowels', () => {
   })
 })
 
-xdescribe('sumArray', () => {
+describe('sumArray', () => {
   it('should find the total value of all elements in the array', () => {
     expect(sumArray([10, 9, 16])).to.equal(35)
   })
@@ -86,7 +86,7 @@ xdescribe('sumArray', () => {
   })
 })
 
-xdescribe('frame', () => {
+describe('frame', () => {
   it('should frame a string in asterisks', () => {
     expect(frame('Rumplestiltskin')).to.equal('*******************\n* Rumplestiltskin *\n*******************')
     expect(frame('Hello Kitty')).to.equal('***************\n* Hello Kitty *\n***************')

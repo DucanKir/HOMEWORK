@@ -30,9 +30,9 @@ function numberReverse(number) {
 function palindromeCheck(string) {
   let word = string.split('')
   let reversedWord = (word.filter((letter) => letter !== ' ')).reverse().join('')
-  console.log(string, reversedWord)
+  // console.log(string, reversedWord)
   let newWord = (word.filter((letter) => letter !== ' ')).join('')
-  console.log(newWord)
+  // console.log(newWord)
   if (newWord === reversedWord) {
     return true
   } else {
@@ -44,7 +44,7 @@ function palindromeCheck(string) {
 // eg. orderStringAlphabetically('javascript is cool') => 'aacciijlooprsstv'
 function orderStringAlphabetically(string) {
   let arr = string.toLowerCase().split('').sort()
-console.log(arr)
+// console.log(arr)
   arr = (arr.filter((letter) => letter !== ' ')).join('')
   return arr
 }
@@ -53,21 +53,21 @@ console.log(arr)
 // eg. titleCase('the lord of the rings') => 'The Lord Of The Rings'
 function titleCase(string) {
   let result
-  return result = string.split(' ').map(element => element.charAt(0).toUpperCase()+ element.slice(1, element.length)).join(' ') 
+  return result = string.split(' ').map(element => element.charAt(0).toUpperCase()+ element.slice(1, element.length)).join(' ')
 }
 
 // write a function that returns the number of vowels in a string case insensitive
 // 'y' should not be considered a vowel
 // eg: numOfVowels('Yellow Submarine') => 6
 function numOfVowels(string) {
-
+  return string.split('').filter((element) => 'AEIOUaeiou'.includes(element)).length
 }
 
 // write a function which gets the total value of all elements in an array.
 // it should be able to handle numbers and strings
 // eg: sumArray([10, 9, 16]) => 35, sumArray(['10', '88', '1']) => 99
 function sumArray(array) {
-
+  return array.reduce((total, item) => total + +item, 0)
 }
 
 // write a function that frames a string in asterisks (*)
@@ -75,7 +75,8 @@ function sumArray(array) {
 // eg: frame('Hello Kitty') => * Hello Kitty *
 //                             ***************
 function frame(string) {
-
+  let asterisks = '*'.repeat(string.length+4)
+  return `${asterisks}\n* ${string} *\n${asterisks}`
 }
 
 // write a function to remove all empty values (null, undefined, '', NaN, false) EXCEPT 0 from an array.
