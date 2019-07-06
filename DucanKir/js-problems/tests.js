@@ -102,7 +102,7 @@ describe('removeBlank', () => {
   })
 })
 
-xdescribe('randomElement', () => {
+describe('randomElement', () => {
   it('should return a random element from an array', () => {
     expect(randomElement(['red', 'green', 'blue'])).to.be.oneOf(['red', 'green', 'blue'])
   })

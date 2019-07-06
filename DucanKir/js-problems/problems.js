@@ -82,14 +82,27 @@ function frame(string) {
 // write a function to remove all empty values (null, undefined, '', NaN, false) EXCEPT 0 from an array.
 // It should handle complex data types eg: {}, [] etc.
 // eg: [0, false, [], undefined, {}, NaN, 'Kevin'] => [0, [], {}, 'Kevin'];
+function filterArr(item) {
+  if(item === 0) {
+    return true
+  }
+  return Boolean(item)
+}
 function removeBlank(array) {
-
+  const arr = array.filter(filterArr)
+  // console.log(arr)
+  return arr
 }
 
 // write a function to return a random element from an array
 // eg: [1,"elephant", "apple", 67] => "elephant"
-function randomElement(array) {
 
+function getRandom (min, max){
+  return Math.floor(Math.random() * max + min)
+
+}
+function randomElement(array) {
+  return array[getRandom(0, array.length)]
 }
 
 // write a function that returns the second lowest and second highest number in an array
