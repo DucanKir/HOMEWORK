@@ -124,7 +124,7 @@ describe('coins', () => {
   })
 })
 
-xdescribe('mergeUnique', () => {
+describe('mergeUnique', () => {
   it('should merge two arrays', () => {
     expect(mergeUnique([1,2,3], [4,5,6])).to.deep.equal([1,2,3,4,5,6])
   })
@@ -134,7 +134,7 @@ xdescribe('mergeUnique', () => {
   })
 })
 
-xdescribe('arrayToObjects', () => {
+describe('arrayToObjects', () => {
   it('should convert an array of strings to an array of objects', () => {
     expect(arrayToObjects(['Paris', 'New York'], 'city')[0]).to.be.an('object')
   })

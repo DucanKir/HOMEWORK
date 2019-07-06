@@ -28,10 +28,10 @@ function numberReverse(number) {
 // write a function to check if a word or phrase is a palindrome returning a boolean
 // eg. palindromeCheck('dad') => true, palindrome('nonsense') => false
 function palindromeCheck(string) {
-  let word = string.split('')
-  let reversedWord = (word.filter((letter) => letter !== ' ')).reverse().join('')
+  const word = string.split('')
+  const reversedWord = (word.filter((letter) => letter !== ' ')).reverse().join('')
   // console.log(string, reversedWord)
-  let newWord = (word.filter((letter) => letter !== ' ')).join('')
+  const newWord = (word.filter((letter) => letter !== ' ')).join('')
   // console.log(newWord)
   if (newWord === reversedWord) {
     return true
@@ -44,7 +44,6 @@ function palindromeCheck(string) {
 // eg. orderStringAlphabetically('javascript is cool') => 'aacciijlooprsstv'
 function orderStringAlphabetically(string) {
   let arr = string.toLowerCase().split('').sort()
-// console.log(arr)
   arr = (arr.filter((letter) => letter !== ' ')).join('')
   return arr
 }
@@ -75,7 +74,7 @@ function sumArray(array) {
 // eg: frame('Hello Kitty') => * Hello Kitty *
 //                             ***************
 function frame(string) {
-  let asterisks = '*'.repeat(string.length+4)
+  const asterisks = '*'.repeat(string.length+4)
   return `${asterisks}\n* ${string} *\n${asterisks}`
 }
 
@@ -133,22 +132,32 @@ function coins(price) {
       price-= coin
     }
   }
-  let listOfCoins = [100, 50, 20, 10, 5, 2, 1]
+  const listOfCoins = [100, 50, 20, 10, 5, 2, 1]
   listOfCoins.forEach((coin) => forEachCoin(coin))
-  console.log(coinsArr)
   return coinsArr
 }
 
 // write a function to merge two arrays and remove duplicates
 // eg: mergeUnique([9,8,8,9], [7,8,8,7]) => [9,8,7]
 function mergeUnique(arr1, arr2) {
+  const arr = arr1.concat(arr2)
+  const uniq = (arr) => arr.filter((v,i) => arr.indexOf(v) === i)
+  return uniq(arr)
+
 
 }
 
 // write a function that converts an array of strings into an array of objects, with the supplied key
 // eg: arrayToObjects(["Mike", "Emily"], "name") => [{ name: "Mike" }, { name: "Emily"}]
 function arrayToObjects(array, key) {
-
+  const arrOfObjects = []
+  function listToObject (item, key) {
+    const newObject = {}
+    newObject[key] = array[array.indexOf(item)]
+    arrOfObjects.push(newObject)
+  }
+  array.forEach(item => listToObject(item, key))
+  return arrOfObjects
 }
 
 // write a function to convert an object into an array of arrays containing key and value
