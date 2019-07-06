@@ -163,12 +163,16 @@ function arrayToObjects(array, key) {
 // write a function to convert an object into an array of arrays containing key and value
 // eg: objectToArray({ name: 'Will Smith', dob: '15-09-1968' }) => [['name', 'Will Smith'], ['dob', '15-09-1968']];
 function objectToArray(object) {
-
+  return Object.entries(object)
 }
 
 // write a function to return the number of occurances of each letter of a string in an object case insensitive
 // eg. numOfOccurances('This is great') => { t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 }
 function numOfOccurances(string) {
+  const letters = string.split('').filter((letter) => letter !== ' ').map(letter => letter.toLowerCase())
+  const counts = {}
+  letters.forEach(letter => counts[letter] = (counts[letter] || 0)+1)
+  return counts
 
 }
 
@@ -177,6 +181,17 @@ function numOfOccurances(string) {
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 etc...
 // eg: fibonacci(4) => [0,1,1,2]; fibonacci(8) => [0, 1, 1, 2, 3, 5, 8, 13];
 function fibonacci(n) {
+  if(n === 1) {
+    return [0]
+  }
+  let result = [0, 1]
+  for (var i = 2; i < n; i++) {
+    const a = result[i - 1]
+    const b = result[i - 2]
+    result.push(a + b)
+  }
+  console.log(result)
+  return result
 
 }
 

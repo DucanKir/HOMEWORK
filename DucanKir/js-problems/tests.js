@@ -147,7 +147,7 @@ describe('arrayToObjects', () => {
   })
 })
 
-xdescribe('objectToArray', () => {
+describe('objectToArray', () => {
   it('should convert an object into an array', () => {
     expect(objectToArray({ name: 'Will Smith', dob: '15-09-1968' })).to.be.an('array')
   })
@@ -164,7 +164,7 @@ xdescribe('objectToArray', () => {
   })
 })
 
-xdescribe('numOfOccurances', () => {
+describe('numOfOccurances', () => {
   it('should return the number of occurances of each letter of a string', () => {
     expect(numOfOccurances('this is great')).to.deep.equal({ t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 })
   })
@@ -173,7 +173,7 @@ xdescribe('numOfOccurances', () => {
   })
 })
 
-xdescribe('fibonacci', () => {
+describe('fibonacci', () => {
   it('should return the first n fibonacci numbers', () => {
     expect(fibonacci(8)).to.deep.equal([0, 1, 1, 2, 3, 5, 8, 13])
     expect(fibonacci(1)).to.deep.equal([0])
