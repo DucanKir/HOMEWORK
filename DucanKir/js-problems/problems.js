@@ -108,15 +108,35 @@ function randomElement(array) {
 // write a function that returns the second lowest and second highest number in an array
 // eg: [1,2,3,4,5,6,7,8] => [2,7]
 function secondLowestSecondHighest(array) {
+  array.sort((a, b) => a-b)
+  const newArr = []
+  newArr.push(array[1],(array[array.length-2]))
+  return newArr
+
 
 }
 
 // write a function that will convert a price into coins needed to make up that price
 // the coins available are 1, 2, 5, 10, 20, 50, 100
 // the function should use the smallest number of coins possible
-// eg: coins(1.99) => [100, 50, 20, 20, 5, 2, 2]
-function coins(price) {
+// eg: coins(1.99) =>
 
+
+
+
+function coins(price) {
+  price*=100
+  var coinsArr = []
+  function forEachCoin(coin) {
+    while (price >= coin) {
+      coinsArr.push(coin)
+      price-= coin
+    }
+  }
+  let listOfCoins = [100, 50, 20, 10, 5, 2, 1]
+  listOfCoins.forEach((coin) => forEachCoin(coin))
+  console.log(coinsArr)
+  return coinsArr
 }
 
 // write a function to merge two arrays and remove duplicates

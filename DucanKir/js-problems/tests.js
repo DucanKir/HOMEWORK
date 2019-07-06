@@ -108,13 +108,13 @@ describe('randomElement', () => {
   })
 })
 
-xdescribe('secondLowestSecondHighest', () => {
+describe('secondLowestSecondHighest', () => {
   it('should return the second highest and second lowest numbers of an array', () => {
     expect(secondLowestSecondHighest([99,2000,-93,40,-761115,11])).to.deep.equal([-93,99])
   })
 })
 
-xdescribe('coins', () => {
+describe('coins', () => {
   it('should return the coins needed to make up the price supplied', () => {
     expect(coins(1.50)).to.deep.equal([100, 50])
   })
