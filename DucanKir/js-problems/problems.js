@@ -184,13 +184,13 @@ function fibonacci(n) {
   if(n === 1) {
     return [0]
   }
-  let result = [0, 1]
+  const result = [0, 1]
   for (var i = 2; i < n; i++) {
     const a = result[i - 1]
     const b = result[i - 2]
     result.push(a + b)
   }
-  console.log(result)
+
   return result
 
 }
@@ -199,5 +199,10 @@ function fibonacci(n) {
 // it should not return negative numbers
 // eg: daysBetween("2017-01-01", "2017-02-01") => 31; daysBetween("2017-02-01", "2017-01-01") => 31
 function daysBetween(date1, date2) {
+  const day = 1000 * 60 * 60 * 24
+  const date1Ms = new Date(date1).getTime()
+  const date2Ms = new Date(date2).getTime()
+  var differenceMs = Math.abs(date1Ms - date2Ms)
+  return Math.round(differenceMs/day)
 
 }
