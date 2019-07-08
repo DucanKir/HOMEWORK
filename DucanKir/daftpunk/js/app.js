@@ -1,9 +1,10 @@
 const body = document.querySelector('body')
-const buttonContainerRed = document.getElementById('buttonsRed')
-const buttonContainerGreen = document.getElementById('buttonsGreen')
-const buttonContainerYellow = document.getElementById('buttonsYellow')
-const buttonContainerRed2 = document.getElementById('buttonsRed2')
+const buttonContainer = document.getElementById('buttons')
 
+document.addEventListener('keydown', logKey)
+function logKey(e) {
+  console.log(e.keyCode)
+}
 
 // play audio
 function play (sound, button) {
@@ -17,52 +18,33 @@ function play (sound, button) {
   })
 }
 
+const buttons = [
+  {name: 'Work it', sound: 'sounds/work_it.wav', key_code: 49, style: 'buttonStyle'},
+  {name: 'Make it', sound: 'sounds/make_it.wav', key_code: 50, style: 'buttonStyle'},
+  {name: 'Do it', sound: 'sounds/do_it.wav', key_code: 51, style: 'buttonStyle'},
+  {name: 'Makes us', sound: 'sounds/makes_us.wav', key_code: 52, style: 'buttonStyle'},
+  {name: 'Harder', sound: 'sounds/harder.wav', key_code: 81, style: 'addColor1'},
+  {name: 'Better', sound: 'sounds/better.wav', key_code: 87, style: 'addColor1'},
+  {name: 'Faster', sound: 'sounds/faster.wav', key_code: 69, style: 'addColor1'},
+  {name: 'Stronger', sound: 'sounds/stronger.wav', key_code: 82, style: 'addColor1'},
+  {name: 'More than', sound: 'sounds/more_than.wav', key_code: 65, style: 'addColor2'},
+  {name: 'Hour', sound: 'sounds/hour.wav', key_code: 83, style: 'addColor2'},
+  {name: 'Our', sound: 'sounds/our.wav', key_code: 68, style: 'addColor2'},
+  {name: 'Never', sound: 'sounds/never.wav', key_code: 70, style: 'addColor2'},
+  {name: 'Ever', sound: 'sounds/ever.wav', key_code: 90, style: 'buttonStyle'},
+  {name: 'After', sound: 'sounds/after.wav', key_code: 88, style: 'buttonStyle'},
+  {name: 'Work is', sound: 'sounds/work_is.wav', key_code: 67, style: 'buttonStyle'},
+  {name: 'Over', sound: 'sounds/over.wav', key_code: 86, style: 'buttonStyle'},
+]
 
-const names = ['Work it','Make it','Do it','Makes us','Harder','Better','Faster','Stronger','More than','Hour','Our','Never','Ever','After','Work is','Over']
-
-const buttons = {
-  workit: 'sounds/work_it.wav',
-  makeit: 'sounds/make_it.wav',
-  doit: 'sounds/do_it.wav',
-  makesus: 'sounds/makes_us.wav',
-  harder: 'sounds/harder.wav',
-  better: 'sounds/better.wav',
-  faster: 'sounds/faster.wav',
-  stronger: 'sounds/stronger.wav',
-  morethan: 'sounds/more_than.wav',
-  hour: 'sounds/hour.wav',
-  our: 'sounds/our.wav',
-  never: 'sounds/never.wav',
-  ever: 'sounds/ever.wav',
-  after: 'sounds/after.wav',
-  workis: 'sounds/work_is.wav',
-  over: 'sounds/over.wav'
-}
-// function assignName ()
-
-Object.keys(buttons).forEach(function (item) {
-  //Crate music
+for(let i = 0; i < buttons.length; i++) {
+  const item = buttons[i]
   const music = document.createElement('audio')
   body.appendChild(music)
-  music.src = buttons[item]
-  //create button
+  music.src = item.sound
   const butt = document.createElement('button')
-  butt.classList.add('buttonStyle')
-  //append button to div
-  if (names.length >12) {
-    buttonContainerRed.appendChild(butt)
-  } else if (names.length <=12 && names.length > 8) {
-    butt.classList.add('addColor1')
-    buttonContainerGreen.appendChild(butt)
-  } else if (names.length <=8 && names.length > 4) {
-    butt.classList.add('addColor2')
-    buttonContainerYellow.appendChild(butt)
-  } else {
-    buttonContainerRed2.appendChild(butt)
-  }
-  //add event listener
+  butt.classList.add(item.style)
+  buttonContainer.appendChild(butt)
   play(music, butt)
-  //give button name
-  butt.innerHTML = names[0]
-  names.shift()
-})
+  butt.innerHTML = item.name
+}
