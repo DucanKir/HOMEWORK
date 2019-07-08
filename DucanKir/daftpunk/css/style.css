@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 800px;
+
+}
+.redButtons {
+
+}
+
+.whiteButtons {
+
+}
+
+.yellowButtons {
+
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
