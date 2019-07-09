@@ -27,22 +27,40 @@ img {
 
 }
 p {
-  margin: 0 20px 0 20px;
+  margin: 0 20px;
   text-align: center;
 }
 .gameResult {
   width: 250px;
   text-align: center;
   font-size: 30px;
+  padding-top: 70px;
 }
 .score {
   display: flex;
   justify-content: space-between;
-  width: 72%;
+  width: 100%;
   padding: 0 20px 0 20px;
   margin: 20px;
   font-size: 30px;
   margin: 5px;
+  width: 79%
+}
+.playerScore {
+  border: 5px solid #589595;
+  border-radius: 15px;
+  padding: 10px 20px;
+  background-color: white;
+  text-align: center;
+  width: 80px;
+}
+.computerScore {
+  border: 5px solid #589595;
+  border-radius: 15px;
+  padding: 10px 20px;
+  background-color: white;
+  text-align: center;
+  width: 80px;
 }
 .choise {
   display: flex;
@@ -63,7 +81,7 @@ p {
 
 }
 .buttons {
-  width: 60%;
+  width: 45%;
   display: flex;
   justify-content: space-around;
   margin: 20px;

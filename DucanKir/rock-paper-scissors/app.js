@@ -14,9 +14,6 @@ var pChoise
 var playerScore = []
 var computerScore = []
 
-// 3 - Scissors
-// 2 - paper
-// 1 - rock
 
 reset.addEventListener('click', function(){
   cChoise =''
@@ -30,6 +27,9 @@ reset.addEventListener('click', function(){
   cPic.src = 'img/0.png'
 })
 
+// 3 - Scissors
+// 2 - paper
+// 1 - rock
 function compare (pChoise, cChoise) {
   if(pChoise === 3 && cChoise === 2) {
     return true
@@ -63,7 +63,7 @@ buttons.forEach(function (item){
     pChoise = +item.value
     picsInPlay(pChoise, cChoise)
     result = compare(pChoise, cChoise)
-    if(result === true) {
+    if(result) {
       winLose.innerHTML = 'You Win!'
       playerScore.push(1)
     } else if (cChoise === pChoise) {
