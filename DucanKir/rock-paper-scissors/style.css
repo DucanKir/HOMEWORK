@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:800px;
+  height: 500px;
+  max-width: 800px;
+  background-color: #e2ffe0;
+  margin-top: 10%;
+
+}
+p {
+  margin: 0 20px 0 20px;
+  text-align: center;
+}
+.score {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px 0 20px;
+  margin: 20px;
+}
+.choise {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 20px;
+}
+.playerChoise {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
+
+.computerChoise {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
+.buttons {
+  width: 75%;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+button {
+  width: 100px;
+  height: 50px;
+}
