@@ -6,6 +6,7 @@ body {
   display: flex;
   justify-content: center;
   font-family: Barlow;
+  color: #235762
 
 }
 
@@ -18,17 +19,21 @@ img {
   flex-direction: column;
   align-items: center;
   width:800px;
-  height: 620px;
+  height: 670px;
   max-width: 800px;
   background-color: #e2ffe0;
   margin-top: 5%;
-  border: 7px solid #235762;
+  border: 8px solid #235762;
   border-radius: 50px;
 
 }
 p {
   margin: 0 20px;
   text-align: center;
+}
+h1 {
+  padding-top: 20px;
+  font-size: 40px;
 }
 .gameResult {
   width: 250px;
@@ -53,6 +58,8 @@ p {
   background-color: white;
   text-align: center;
   width: 80px;
+
+
 }
 .computerScore {
   border: 5px solid #589595;
@@ -62,6 +69,11 @@ p {
   text-align: center;
   width: 80px;
 }
+.scoreChanged {
+  background-color: #fff759;
+  box-shadow: 0 0 0 5px rgba(255, 247, 89, 0.3);
+}
+
 .choise {
   display: flex;
   justify-content: space-around;
@@ -96,6 +108,9 @@ button {
 }
 button:focus {
   outline: 0
+}
+button:hover{
+  background-color: #bce6e6;
 }
 .reset {
   margin: 20px;

@@ -11,15 +11,15 @@ cPic.src = 'img/0.png'
 var result
 var cChoise
 var pChoise
-var playerScore = []
-var computerScore = []
+var playerScore = 0
+var computerScore = 0
 
 
 reset.addEventListener('click', function(){
   cChoise =''
   pChoise = ''
-  playerScore = []
-  computerScore = []
+  playerScore = 0
+  computerScore = 0
   winLose.innerHTML = 'New game'
   pScore.innerHTML = 0
   cScore.innerHTML = 0
@@ -65,15 +65,27 @@ buttons.forEach(function (item){
     result = compare(pChoise, cChoise)
     if(result) {
       winLose.innerHTML = 'You Win!'
-      playerScore.push(1)
+      playerScore += 1
+      scoreChange(pScore)
     } else if (cChoise === pChoise) {
       winLose.innerHTML = 'Draw'
     } else {
       winLose.innerHTML = 'Loser!'
-      computerScore.push(1)
+      computerScore += 1
+      scoreChange(cScore)
 
     }
-    pScore.innerHTML = playerScore.reduce((total, item) => total+item, 0)
-    cScore.innerHTML = computerScore.reduce((total, item) => total+item, 0)
+    pScore.innerHTML = playerScore
+    cScore.innerHTML = computerScore
+
   })
 })
+
+function scoreChange (p) {
+  p.classList.add('scoreChanged')
+
+  setTimeout(function(){
+    p.classList.remove('scoreChanged')
+
+  }, 500)
+}
