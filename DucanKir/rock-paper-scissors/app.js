@@ -1,16 +1,34 @@
-const buttons = document.querySelectorAll('button')
-const winLose = document.querySelector('h2')
+const buttons = document.querySelectorAll('.choiseButton')
+const winLose = document.querySelector('.gameResult')
 const pScore = document.querySelector('.playerScore')
 const cScore = document.querySelector('.computerScore')
+const reset = document.querySelector('.reset')
+const pPic = document.querySelector('.playerChoise')
+const cPic = document.querySelector('.computerChoise')
 
+pPic.src = 'img/0.png'
+cPic.src = 'img/0.png'
 var result
 var cChoise
 var pChoise
 var playerScore = []
 var computerScore = []
+
 // 3 - Scissors
 // 2 - paper
 // 1 - rock
+
+reset.addEventListener('click', function(){
+  cChoise =''
+  pChoise = ''
+  playerScore = []
+  computerScore = []
+  winLose.innerHTML = 'New game'
+  pScore.innerHTML = 0
+  cScore.innerHTML = 0
+  pPic.src = 'img/0.png'
+  cPic.src = 'img/0.png'
+})
 
 function compare (pChoise, cChoise) {
   if(pChoise === 3 && cChoise === 2) {
@@ -23,11 +41,27 @@ function compare (pChoise, cChoise) {
     return false
   }
 }
-
+function picsInPlay (pCh, cCh) {
+  if(pCh === 1) {
+    pPic.src = 'img/rock.png'
+  } else if (pCh === 2) {
+    pPic.src = 'img/paper.png'
+  } else {
+    pPic.src ='img/scissors.png'
+  }
+  if(cCh === 1) {
+    cPic.src = 'img/rockC.png'
+  } else if (cCh === 2) {
+    cPic.src = 'img/paperC.png'
+  } else {
+    cPic.src ='img/scissorsC.png'
+  }
+}
 buttons.forEach(function (item){
   item.addEventListener('click', function () {
     cChoise = Math.floor(Math.random() * (3 - 1 + 1)) + 1
     pChoise = +item.value
+    picsInPlay(pChoise, cChoise)
     result = compare(pChoise, cChoise)
     if(result === true) {
       winLose.innerHTML = 'You Win!'

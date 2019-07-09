@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Barlow&display=swap');
+    </style>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissors</title>
@@ -10,19 +13,20 @@
       <h1>Rock Paper Scissors!</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
       <div class="score">
-        <div class="playerScore">10 points</div>
-        <div class="computerScore">10 points</div>
+        <div class="playerScore">0</div>
+        <div class="computerScore">0</div>
       </div>
       <div class="choise">
-        <div class="playerChoise"></div>
-        <h2>Win</h2>
-        <div class="computerChoise"></div>
+        <div ><img class="playerChoise" src="" alt=""></div>
+        <div class="gameResult">Let's play!</div>
+        <div ><img class="computerChoise" src="" alt=""></div>
       </div>
       <div class="buttons">
-        <button id="rock" value="1">Rock</button>
-        <button id="paper" value="2">Paper</button>
-        <button id="scissors" value="3">Scissors</button>
+        <button class="choiseButton" id="rock" value="1">Rock</button>
+        <button class="choiseButton" id="paper" value="2">Paper</button>
+        <button class="choiseButton" id="scissors" value="3">Scissors</button>
       </div>
+      <button class="reset">Restart</button>
     </div>
   </body>
   <script src="app.js" charset="utf-8"></script>
