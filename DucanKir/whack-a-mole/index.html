@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Barlow&display=swap');
+    </style>
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <p>Game over!</p>
+        <p>Your score is</p>
+        <p class="scoreModal"></p>
+      </div>
+    </div>
     <div class="container">
       <header>
-        <div class="score">0</div>
-        <div class="timer">30</div>
+        <div>Score: <span class="score">0</span></div>
+        <div>Time: <span class="timer">30</span></div>
       </header>
       <div class="game">
         <div class="cell"><img src=""></div>

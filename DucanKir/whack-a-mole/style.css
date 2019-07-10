@@ -4,29 +4,48 @@
 
 body {
   margin: 0;
+  background-image: url('https://i.imgur.com/Uf48sh8.jpg');
+  background-repeat: repeat;
+  font-family: Barlow;
+  color: white;
+  font-size: 25px;
 }
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
 }
 header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 600px;
+  border: 2px solid green;
+  border-radius: 5px;
+  color: white;
+  background-color: #61bc147a;
+  position: absolute;
+  height: 50px;
+  top: -5px;
+  padding: 8px;
 }
 .game {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 620px;
-    border: 1px solid black;
+    max-width: 640px;
+    margin-top: 45px;
+
 }
 
 .cell {
   width: 150px;
   height: 150px;
+  background-image: url('https://i.imgur.com/vJZveSv.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 80%;
+  background-position: 0 -1px;
+  margin: 5px;
 }
 
 img {
@@ -34,12 +53,43 @@ img {
 }
 .buttons {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: space-between;
+  width: 600px;
 }
 button {
   width: 100px;
-  height: 30px;
+  height: 50px;
   margin: 10px;
+  font-size: 25px;
+  border: 2px solid green;
+  border-radius: 5px;
+  color: white;
+  background-color: #61bc147a;
+}
+button:focus {
+  outline: 0;
+}
+button:active {
+  background-color: green;
+}
+button:disabled {
+  background-color: grey;
+}
 
+.scoreChange {
+  color: red;
+}
+.modal {
+  display: none;
+  justify-content: center;
+  position: fixed;
+  text-align: center;
+  z-index: 1;
+  left: 36%;
+  top: 25%;
+  width: 400px;
+  height: 200px;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.5);
 }
