@@ -79,7 +79,8 @@ main article {
   flex-direction: column;
   align-content: flex-start;
   margin: 0;
-  padding: 20px 20px 0 20px; }
+  padding: 20px 20px 0 20px;
+  transition: 2s; }
   main article p {
     margin: 0; }
   main article img {

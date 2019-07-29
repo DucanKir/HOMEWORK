@@ -2,6 +2,15 @@ import 'bulma'
 import './style.scss'
 
 const container = document.querySelector('.columns')
+const dropdown = document.querySelector('select')
+// const netherlands = []
+// const france = []
+// const wales = []
+// const denmark = []
+// const england = []
+// const france = []
+// const france = []
+
 
 fetch('https://cheesebored.herokuapp.com/cheeses')
   .then((res) => res.json())
@@ -29,3 +38,14 @@ fetch('https://cheesebored.herokuapp.com/cheeses')
       container.appendChild(column)
     })
   })
+
+dropdown.addEventListener('change', (e) => {
+  let result = []
+  // for(let i = 0; i<data.length; i++){
+  //   if (e.target.value === 'All Countries') {
+  //     result.push(countriesData[i])
+  //   } else if (countriesData[i].region === e.target.value) {
+  //     result.push(countriesData[i])
+  //   }
+  // }
+})

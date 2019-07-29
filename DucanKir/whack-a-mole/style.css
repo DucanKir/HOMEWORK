@@ -77,7 +77,8 @@ button:disabled {
 }
 
 .scoreChange {
-  color: red;
+  color: yellow;
+  text-shadow: 0 0 20px yellow;
 }
 .modal {
   display: none;

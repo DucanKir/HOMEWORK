@@ -10,13 +10,12 @@ const modal = document.querySelector('.modal')
 
 let gameId
 var timerId
-var timerTime = 30
+var timerTime = 15
 let score = 0
-scoreCounter.innerHTML = score
-timer.innetHTML = 30
 const img = 'img/mole-hole-png-3.png'
+scoreCounter.innerHTML = score
+timer.innetHTML = 15
 
-console.log(gameCells)
 
 function startGame () {
   timerId = setInterval(function(){
@@ -52,10 +51,6 @@ gameCells.forEach( function (element) {
     scoreCounter.innerHTML = score
     scoreModal.innerHTML = score
     scoreChange(scoreCounter)
-    console.log(score)
-    console.log(timerId)
-    console.log(gameId)
-
   })
 })
 
@@ -65,8 +60,8 @@ resetButton.addEventListener('click', function (){
   startButton.disabled = false
   score = 0
   scoreCounter.innerHTML = score
-  timerTime = 30
-  timer.innerHTML = 30
+  timerTime = 15
+  timer.innerHTML = 15
   modal.style.display = 'none'
   scoreModal.innerHTML = score
 })

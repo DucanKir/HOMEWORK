@@ -11,13 +11,7 @@ const Card = (props) => {
           <img src={props.image} alt={props.name} />
         </figure>
       </div>
-      <div className="media-content">
-        <p className="subtitle is-6">Origin: {props.origin}</p>
-        <p className="subtitle is-6">{props.tastingNotes}</p>
-        <p className="subtitle is-6">Grape: {props.grape}</p>
-        <p className="subtitle is-6">ABV: {props.abv}%</p>
-        <p className="subtitle is-6">£{props.price}</p>
-      </div>
+      
     </div>
   )
 }

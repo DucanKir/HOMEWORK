@@ -30,7 +30,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.lines)
     return (
       <div className="columns is-multiline">
         {this.state.lines.map(line =>

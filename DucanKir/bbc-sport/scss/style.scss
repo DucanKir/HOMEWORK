@@ -93,12 +93,14 @@ main {
     align-content: flex-start;
     margin: 0;
     padding:20px 20px 0 20px;
+    transition: 2s;
     p {
       margin: 0;
     }
     img {
       align-self: center;
       width: 100%;
+
     }
   }
 }
