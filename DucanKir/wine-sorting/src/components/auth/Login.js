@@ -1,38 +1,36 @@
 import React from 'react'
+import axios from 'axios'
+import Auth from '../../lib/Auth'
 
 class Register extends React.Component {
 
   constructor() {
     super()
-    this.state = {}
+    this.state = {
+      formData: {},
+      errors: ''
+    }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(e) {
-    this.setState({ [e.target.name]: e.target.value, error: '' })
+    const formData = {...this.state.formData, [e.target.name]: e.target.value }
+    this.setState({ formData, error: '' })
   }
 
   handleSubmit(e) {
     e.preventDefault()
 
-    fetch('https://winebored.herokuapp.com/login', {
-      method: 'POST',
-      body: JSON.stringify(this.state),
-      headers: { 'Content-Type': 'application/json' }
-    })
+    axios.post('https://winebored.herokuapp.com/login', this.state.formData)
       .then(res => {
-        if(res.status === 401) {
-          this.setState({ error: 'Invalid credentials'})
-          localStorage.removeItem('token')
-        } else {
-          res.json()
-            .then(data => {
-              localStorage.setItem('token', data.token)
-              this.props.history.push('/wines')
-            })
-        }
+        Auth.setToken(res.data.token)
+        this.props.history.push('/wines')
+      })
+      .catch(() => {
+        Auth.removeToken()
+        this.setState({error: 'Invalid credentials'})
       })
   }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-class Register extends React.Component {
+class Edit extends React.Component {
 
   constructor() {
     super()
@@ -14,6 +14,12 @@ class Register extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  componentDidMount() {
+
+    axios.get(`https://winebored.herokuapp.com/wines/${this.props.match.params.id}`)
+      .then(res => this.setState({ formData: res.data}))
+  }
+
   handleChange(e) {
     const formData = { ...this.state.formData, [e.target.name]: e.target.value}
     const errors = { ...this.state.errors, [e.target.name]: ''}
@@ -23,68 +29,72 @@ class Register extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.post('https://winebored.herokuapp.com/register', this.state.formData)
-      .then(() => this.props.history.push('/login'))
+    const token = Auth.getToken()
+    const wineId = this.props.match.params.id
+    axios.put(`https://winebored.herokuapp.com/wines/${wineId}`, this.state.formData, {
+      headers: {'Authorization': `Bearer ${token}`}
+    })
+      .then(() => this.props.history.push(`/wines/${wineId}`))
       .catch(err => this.setState({errors: err.response.data.errors}))
-      
+
   }
 
   render() {
-    console.log(this.state)
     return (
       <section className="section">
         <div className="container">
           <form onSubmit={this.handleSubmit}>
             <div className="field">
-              <label className="label">Username</label>
+              <label className="label">Name</label>
               <div className="control">
                 <input
                   className="input"
-                  name="username"
-                  placeholder="Username"
+                  name="name"
+                  placeholder="eg: Cheddar"
                   onChange={this.handleChange}
+                  value={this.state.formData.name || ''}
                 />
               </div>
-              {this.state.errors.username && <small className="help is-danger">{this.state.errors.username}</small>}
+              {this.state.errors.name && <small className="help is-danger">{this.state.errors.name}</small>}
             </div>
             <div className="field">
-              <label className="label">Email</label>
+              <label className="label">Origin</label>
               <div className="control">
                 <input
                   className="input"
-                  type="email"
-                  name="email"
-                  placeholder="email@smth.com"
+                  name="origin"
+                  placeholder="eg: England"
                   onChange={this.handleChange}
+                  value={this.state.formData.origin || ''}
                 />
               </div>
-              {this.state.errors.email && <small className="help is-danger">{this.state.errors.email}</small>}
+              {this.state.errors.origin && <small className="help is-danger">{this.state.errors.origin}</small>}
             </div>
             <div className="field">
-              <label className="label">Password</label>
+              <label className="label">Image</label>
               <div className="control">
                 <input
                   className="input"
-                  type="password"
-                  name="password"
-                  placeholder="••••••••"
+                  name="image"
+                  placeholder="https//..."
                   onChange={this.handleChange}
+                  value={this.state.formData.image || ''}
                 />
               </div>
-              {this.state.errors.password && <small className="help is-danger">{this.state.errors.password}</small>}
+              {this.state.errors.image && <small className="help is-danger">{this.state.errors.image}</small>}
             </div>
             <div className="field">
-              <label className="label">Password Confirmation</label>
+              <label className="label">tastingNotes</label>
               <div className="control">
-                <input
+                <textarea
                   className="input"
-                  type="password"
-                  name="passwordConfirmation"
-                  placeholder="••••••••"
+                  name="tastingNotes"
+                  placeholder="tasty"
                   onChange={this.handleChange}
+                  value={this.state.formData.tastingNotes || ''}
                 />
               </div>
-              {this.state.errors.passwordConfirmation && <small className="help is-danger">{this.state.errors.passwordConfirmation}</small>}
+              {this.state.errors.tastingNotes && <small className="help is-danger">{this.state.errors.tastingNotes}</small>}
             </div>
 
             <button className="button is-primary">Submit</button>
@@ -95,4 +105,4 @@ class Register extends React.Component {
   }
 }
 
-export default Register
+export default Edit
