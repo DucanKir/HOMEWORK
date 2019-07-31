@@ -24,7 +24,7 @@ class App extends React.Component {
         <Navbar />
         <Switch>
           <Route path="/wines/:id/edit" component={Edit} />
-          <Route path="/wine/new" component={New} />
+          <Route path="/wines/new" component={New} />
           <Route path="/wines/:id" component={WineShow} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
