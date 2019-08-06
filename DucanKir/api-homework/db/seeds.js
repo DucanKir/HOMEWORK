@@ -1,0 +1,11 @@
+const mongoose = require('mongoose')
+mongoose.Promise = require('bluebird')
+const Book = require('../models/Book')
+const bookData = require('./data/bookData')
+
+mongoose.connect('mongodb://localhost:27017/books-db', { useNewUrlParser: true })
+  .then(() => mongoose.connection.db.dropDatabase())
+  .then(() => Book.create(bookData))
+  .then(() => console.log('Successfully seeded!'))
+  .catch((err) => console.log(err))
+  .finally(() => mongoose.connection.close())
