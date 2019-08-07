@@ -3,12 +3,16 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
 const router = require('./config/routes')
+const queryHandler = require('./lib/queryHandler')
+const {dbURI} = require('./config/environment')
 
 const app = express()
 
-mongoose.connect('mongodb://localhost:27017/books-db')
+mongoose.connect(dbURI, {useNewUrlParser: true })
 
 app.use(bodyParser.json())
+
+app.use(queryHandler)
 
 app.use(router)
 
